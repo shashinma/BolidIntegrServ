@@ -1,0 +1,6 @@
+@BolidIntegrServ_HostAddress = http://localhost:5155
+
+GET {{BolidIntegrServ_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
