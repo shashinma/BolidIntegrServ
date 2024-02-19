@@ -9,7 +9,6 @@ public class OrionDbContext : DbContext
     {
     }
 
-    // Определите здесь ваши сущности (таблицы)
     public DbSet<pList> pList { get; set; }
     public DbSet<pLogData> pLogData { get; set; }
 }
