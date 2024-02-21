@@ -22,14 +22,14 @@ public class OrionController : ControllerBase
         IQueryable<pList> pListQuery = _dbContext.pList;
         IQueryable<pLogData> pLogDataQuery = _dbContext.pLogData;
         
-        var pListEntity = await pListQuery.SingleOrDefaultAsync(pl => pl.TabNumber == tabNumber);
+        var pListEntity = await pListQuery.SingleOrDefaultAsync(pList => pList.TabNumber == tabNumber);
         
         if (pListEntity == null)
         {
             return NotFound();
         }
         
-        var pLogDataEntities = await pLogDataQuery.FirstOrDefaultAsync(pld => pld.HozOrgan == pListEntity.ID);
+        var pLogDataEntities = await pLogDataQuery.FirstOrDefaultAsync(pLogData => pLogData.HozOrgan == pListEntity.ID);
 
         return Ok(pLogDataEntities);
     }
